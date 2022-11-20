@@ -1,0 +1,350 @@
+
+
+================================================================
+== Synthesis Summary Report of 'mem_bottleneck'
+================================================================
++ General Information: 
+    * Date:           Mon Nov 21 03:30:23 2022
+    * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+    * Project:        1115mem
+    * Solution:       solution3 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |      Modules     | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |    |           |           |     |
+    |      & Loops     | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |    LUT    | URAM|
+    +------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |+ mem_bottleneck  |     -|  0.52|      128|  1.280e+03|         -|      129|     -|        no|     -|   -|  107 (~0%)|  2211 (4%)|    -|
+    | o SUM_LOOP       |     -|  7.30|      126|  1.260e+03|         2|        1|   126|       yes|     -|   -|          -|          -|    -|
+    +------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* REGISTER
++-----------+---------+----------+
+| Interface | Mode    | Bitwidth |
++-----------+---------+----------+
+| ap_return |         | 32       |
+| mem_0     | ap_none | 32       |
+| mem_1     | ap_none | 32       |
+| mem_10    | ap_none | 32       |
+| mem_100   | ap_none | 32       |
+| mem_101   | ap_none | 32       |
+| mem_102   | ap_none | 32       |
+| mem_103   | ap_none | 32       |
+| mem_104   | ap_none | 32       |
+| mem_105   | ap_none | 32       |
+| mem_106   | ap_none | 32       |
+| mem_107   | ap_none | 32       |
+| mem_108   | ap_none | 32       |
+| mem_109   | ap_none | 32       |
+| mem_11    | ap_none | 32       |
+| mem_110   | ap_none | 32       |
+| mem_111   | ap_none | 32       |
+| mem_112   | ap_none | 32       |
+| mem_113   | ap_none | 32       |
+| mem_114   | ap_none | 32       |
+| mem_115   | ap_none | 32       |
+| mem_116   | ap_none | 32       |
+| mem_117   | ap_none | 32       |
+| mem_118   | ap_none | 32       |
+| mem_119   | ap_none | 32       |
+| mem_12    | ap_none | 32       |
+| mem_120   | ap_none | 32       |
+| mem_121   | ap_none | 32       |
+| mem_122   | ap_none | 32       |
+| mem_123   | ap_none | 32       |
+| mem_124   | ap_none | 32       |
+| mem_125   | ap_none | 32       |
+| mem_126   | ap_none | 32       |
+| mem_127   | ap_none | 32       |
+| mem_13    | ap_none | 32       |
+| mem_14    | ap_none | 32       |
+| mem_15    | ap_none | 32       |
+| mem_16    | ap_none | 32       |
+| mem_17    | ap_none | 32       |
+| mem_18    | ap_none | 32       |
+| mem_19    | ap_none | 32       |
+| mem_2     | ap_none | 32       |
+| mem_20    | ap_none | 32       |
+| mem_21    | ap_none | 32       |
+| mem_22    | ap_none | 32       |
+| mem_23    | ap_none | 32       |
+| mem_24    | ap_none | 32       |
+| mem_25    | ap_none | 32       |
+| mem_26    | ap_none | 32       |
+| mem_27    | ap_none | 32       |
+| mem_28    | ap_none | 32       |
+| mem_29    | ap_none | 32       |
+| mem_3     | ap_none | 32       |
+| mem_30    | ap_none | 32       |
+| mem_31    | ap_none | 32       |
+| mem_32    | ap_none | 32       |
+| mem_33    | ap_none | 32       |
+| mem_34    | ap_none | 32       |
+| mem_35    | ap_none | 32       |
+| mem_36    | ap_none | 32       |
+| mem_37    | ap_none | 32       |
+| mem_38    | ap_none | 32       |
+| mem_39    | ap_none | 32       |
+| mem_4     | ap_none | 32       |
+| mem_40    | ap_none | 32       |
+| mem_41    | ap_none | 32       |
+| mem_42    | ap_none | 32       |
+| mem_43    | ap_none | 32       |
+| mem_44    | ap_none | 32       |
+| mem_45    | ap_none | 32       |
+| mem_46    | ap_none | 32       |
+| mem_47    | ap_none | 32       |
+| mem_48    | ap_none | 32       |
+| mem_49    | ap_none | 32       |
+| mem_5     | ap_none | 32       |
+| mem_50    | ap_none | 32       |
+| mem_51    | ap_none | 32       |
+| mem_52    | ap_none | 32       |
+| mem_53    | ap_none | 32       |
+| mem_54    | ap_none | 32       |
+| mem_55    | ap_none | 32       |
+| mem_56    | ap_none | 32       |
+| mem_57    | ap_none | 32       |
+| mem_58    | ap_none | 32       |
+| mem_59    | ap_none | 32       |
+| mem_6     | ap_none | 32       |
+| mem_60    | ap_none | 32       |
+| mem_61    | ap_none | 32       |
+| mem_62    | ap_none | 32       |
+| mem_63    | ap_none | 32       |
+| mem_64    | ap_none | 32       |
+| mem_65    | ap_none | 32       |
+| mem_66    | ap_none | 32       |
+| mem_67    | ap_none | 32       |
+| mem_68    | ap_none | 32       |
+| mem_69    | ap_none | 32       |
+| mem_7     | ap_none | 32       |
+| mem_70    | ap_none | 32       |
+| mem_71    | ap_none | 32       |
+| mem_72    | ap_none | 32       |
+| mem_73    | ap_none | 32       |
+| mem_74    | ap_none | 32       |
+| mem_75    | ap_none | 32       |
+| mem_76    | ap_none | 32       |
+| mem_77    | ap_none | 32       |
+| mem_78    | ap_none | 32       |
+| mem_79    | ap_none | 32       |
+| mem_8     | ap_none | 32       |
+| mem_80    | ap_none | 32       |
+| mem_81    | ap_none | 32       |
+| mem_82    | ap_none | 32       |
+| mem_83    | ap_none | 32       |
+| mem_84    | ap_none | 32       |
+| mem_85    | ap_none | 32       |
+| mem_86    | ap_none | 32       |
+| mem_87    | ap_none | 32       |
+| mem_88    | ap_none | 32       |
+| mem_89    | ap_none | 32       |
+| mem_9     | ap_none | 32       |
+| mem_90    | ap_none | 32       |
+| mem_91    | ap_none | 32       |
+| mem_92    | ap_none | 32       |
+| mem_93    | ap_none | 32       |
+| mem_94    | ap_none | 32       |
+| mem_95    | ap_none | 32       |
+| mem_96    | ap_none | 32       |
+| mem_97    | ap_none | 32       |
+| mem_98    | ap_none | 32       |
+| mem_99    | ap_none | 32       |
++-----------+---------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| mem      | in        | int*     |
+| return   | out       | int      |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+---------+
+| Argument | HW Interface | HW Type |
++----------+--------------+---------+
+| mem      | mem_0        | port    |
+| mem      | mem_1        | port    |
+| mem      | mem_2        | port    |
+| mem      | mem_3        | port    |
+| mem      | mem_4        | port    |
+| mem      | mem_5        | port    |
+| mem      | mem_6        | port    |
+| mem      | mem_7        | port    |
+| mem      | mem_8        | port    |
+| mem      | mem_9        | port    |
+| mem      | mem_10       | port    |
+| mem      | mem_11       | port    |
+| mem      | mem_12       | port    |
+| mem      | mem_13       | port    |
+| mem      | mem_14       | port    |
+| mem      | mem_15       | port    |
+| mem      | mem_16       | port    |
+| mem      | mem_17       | port    |
+| mem      | mem_18       | port    |
+| mem      | mem_19       | port    |
+| mem      | mem_20       | port    |
+| mem      | mem_21       | port    |
+| mem      | mem_22       | port    |
+| mem      | mem_23       | port    |
+| mem      | mem_24       | port    |
+| mem      | mem_25       | port    |
+| mem      | mem_26       | port    |
+| mem      | mem_27       | port    |
+| mem      | mem_28       | port    |
+| mem      | mem_29       | port    |
+| mem      | mem_30       | port    |
+| mem      | mem_31       | port    |
+| mem      | mem_32       | port    |
+| mem      | mem_33       | port    |
+| mem      | mem_34       | port    |
+| mem      | mem_35       | port    |
+| mem      | mem_36       | port    |
+| mem      | mem_37       | port    |
+| mem      | mem_38       | port    |
+| mem      | mem_39       | port    |
+| mem      | mem_40       | port    |
+| mem      | mem_41       | port    |
+| mem      | mem_42       | port    |
+| mem      | mem_43       | port    |
+| mem      | mem_44       | port    |
+| mem      | mem_45       | port    |
+| mem      | mem_46       | port    |
+| mem      | mem_47       | port    |
+| mem      | mem_48       | port    |
+| mem      | mem_49       | port    |
+| mem      | mem_50       | port    |
+| mem      | mem_51       | port    |
+| mem      | mem_52       | port    |
+| mem      | mem_53       | port    |
+| mem      | mem_54       | port    |
+| mem      | mem_55       | port    |
+| mem      | mem_56       | port    |
+| mem      | mem_57       | port    |
+| mem      | mem_58       | port    |
+| mem      | mem_59       | port    |
+| mem      | mem_60       | port    |
+| mem      | mem_61       | port    |
+| mem      | mem_62       | port    |
+| mem      | mem_63       | port    |
+| mem      | mem_64       | port    |
+| mem      | mem_65       | port    |
+| mem      | mem_66       | port    |
+| mem      | mem_67       | port    |
+| mem      | mem_68       | port    |
+| mem      | mem_69       | port    |
+| mem      | mem_70       | port    |
+| mem      | mem_71       | port    |
+| mem      | mem_72       | port    |
+| mem      | mem_73       | port    |
+| mem      | mem_74       | port    |
+| mem      | mem_75       | port    |
+| mem      | mem_76       | port    |
+| mem      | mem_77       | port    |
+| mem      | mem_78       | port    |
+| mem      | mem_79       | port    |
+| mem      | mem_80       | port    |
+| mem      | mem_81       | port    |
+| mem      | mem_82       | port    |
+| mem      | mem_83       | port    |
+| mem      | mem_84       | port    |
+| mem      | mem_85       | port    |
+| mem      | mem_86       | port    |
+| mem      | mem_87       | port    |
+| mem      | mem_88       | port    |
+| mem      | mem_89       | port    |
+| mem      | mem_90       | port    |
+| mem      | mem_91       | port    |
+| mem      | mem_92       | port    |
+| mem      | mem_93       | port    |
+| mem      | mem_94       | port    |
+| mem      | mem_95       | port    |
+| mem      | mem_96       | port    |
+| mem      | mem_97       | port    |
+| mem      | mem_98       | port    |
+| mem      | mem_99       | port    |
+| mem      | mem_100      | port    |
+| mem      | mem_101      | port    |
+| mem      | mem_102      | port    |
+| mem      | mem_103      | port    |
+| mem      | mem_104      | port    |
+| mem      | mem_105      | port    |
+| mem      | mem_106      | port    |
+| mem      | mem_107      | port    |
+| mem      | mem_108      | port    |
+| mem      | mem_109      | port    |
+| mem      | mem_110      | port    |
+| mem      | mem_111      | port    |
+| mem      | mem_112      | port    |
+| mem      | mem_113      | port    |
+| mem      | mem_114      | port    |
+| mem      | mem_115      | port    |
+| mem      | mem_116      | port    |
+| mem      | mem_117      | port    |
+| mem      | mem_118      | port    |
+| mem      | mem_119      | port    |
+| mem      | mem_120      | port    |
+| mem      | mem_121      | port    |
+| mem      | mem_122      | port    |
+| mem      | mem_123      | port    |
+| mem      | mem_124      | port    |
+| mem      | mem_125      | port    |
+| mem      | mem_126      | port    |
+| mem      | mem_127      | port    |
+| return   | ap_return    | port    |
++----------+--------------+---------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------+-----+--------+----------+-----+--------+---------+
+| Name                  | DSP | Pragma | Variable | Op  | Impl   | Latency |
++-----------------------+-----+--------+----------+-----+--------+---------+
+| + mem_bottleneck      | 0   |        |          |     |        |         |
+|   add_ln14_fu_1877_p2 | -   |        | add_ln14 | add | fabric | 0       |
+|   add_ln11_fu_1883_p2 | -   |        | add_ln11 | add | fabric | 0       |
++-----------------------+-----+--------+----------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+----------------------------------+-------------------------------------------------------------+
+| Type            | Options                          | Location                                                    |
++-----------------+----------------------------------+-------------------------------------------------------------+
+| array_partition | dim=1 type=complete variable=mem | ../mem_bottleneck/mem_bottleneck.c:5 in mem_bottleneck, mem |
+| pipeline        |                                  | ../mem_bottleneck/mem_bottleneck.c:13 in mem_bottleneck     |
++-----------------+----------------------------------+-------------------------------------------------------------+
+
+

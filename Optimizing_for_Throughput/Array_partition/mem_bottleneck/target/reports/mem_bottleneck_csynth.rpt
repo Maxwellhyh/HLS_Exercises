@@ -1,0 +1,281 @@
+
+
+================================================================
+== Vitis HLS Report for 'mem_bottleneck'
+================================================================
+* Date:           Mon Nov 21 03:30:23 2022
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        1115mem
+* Solution:       solution3 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.783 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      128|      128|  1.280 us|  1.280 us|  129|  129|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------+---------+---------+----------+-----------+-----------+------+----------+
+        |            |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- SUM_LOOP  |      126|      126|         2|          1|          1|   126|       yes|
+        +------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|    133|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       0|   2019|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     59|    -|
+|Register         |        -|    -|     107|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     107|   2211|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|      4|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------+-----------------+---------+----+---+-----+-----+
+    |      Instance      |      Module     | BRAM_18K| DSP| FF| LUT | URAM|
+    +--------------------+-----------------+---------+----+---+-----+-----+
+    |mux_1288_32_1_1_U1  |mux_1288_32_1_1  |        0|   0|  0|  673|    0|
+    |mux_1288_32_1_1_U2  |mux_1288_32_1_1  |        0|   0|  0|  673|    0|
+    |mux_1288_32_1_1_U3  |mux_1288_32_1_1  |        0|   0|  0|  673|    0|
+    +--------------------+-----------------+---------+----+---+-----+-----+
+    |Total               |                 |        0|   0|  0| 2019|    0|
+    +--------------------+-----------------+---------+----+---+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |add_ln11_fu_1883_p2    |         +|   0|  0|  15|           8|           1|
+    |add_ln14_1_fu_1897_p2  |         +|   0|  0|  32|          32|          32|
+    |add_ln14_fu_1877_p2    |         +|   0|  0|  39|          32|          32|
+    |sum_1_fu_1901_p2       |         +|   0|  0|  32|          32|          32|
+    |ap_condition_201       |       and|   0|  0|   2|           1|           1|
+    |icmp_ln11_fu_1085_p2   |      icmp|   0|  0|  11|           8|           9|
+    |ap_enable_pp0          |       xor|   0|  0|   2|           1|           2|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |Total                  |          |   0|  0| 133|         114|         109|
+    +-----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------------+----+-----------+-----+-----------+
+    |             Name            | LUT| Input Size| Bits| Total Bits|
+    +-----------------------------+----+-----------+-----+-----------+
+    |ap_done_int                  |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1      |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_1         |   9|          2|    8|         16|
+    |ap_sig_allocacmp_sum_load_1  |  14|          3|   32|         96|
+    |i_fu_300                     |   9|          2|    8|         16|
+    |sum_fu_296                   |   9|          2|   32|         64|
+    +-----------------------------+----+-----------+-----+-----------+
+    |Total                        |  59|         13|   82|        196|
+    +-----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |add_ln14_reg_1938        |  32|   0|   32|          0|
+    |ap_CS_fsm                |   1|   0|    1|          0|
+    |ap_done_reg              |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |   1|   0|    1|          0|
+    |i_fu_300                 |   8|   0|    8|          0|
+    |sum_fu_296               |  32|   0|   32|          0|
+    |tmp_reg_1933             |  32|   0|   32|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    | 107|   0|  107|          0|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------+-----+-----+------------+----------------+--------------+
+| RTL Ports | Dir | Bits|  Protocol  |  Source Object |    C Type    |
++-----------+-----+-----+------------+----------------+--------------+
+|ap_clk     |   in|    1|  ap_ctrl_hs|  mem_bottleneck|  return value|
+|ap_rst     |   in|    1|  ap_ctrl_hs|  mem_bottleneck|  return value|
+|ap_start   |   in|    1|  ap_ctrl_hs|  mem_bottleneck|  return value|
+|ap_done    |  out|    1|  ap_ctrl_hs|  mem_bottleneck|  return value|
+|ap_idle    |  out|    1|  ap_ctrl_hs|  mem_bottleneck|  return value|
+|ap_ready   |  out|    1|  ap_ctrl_hs|  mem_bottleneck|  return value|
+|ap_return  |  out|   32|  ap_ctrl_hs|  mem_bottleneck|  return value|
+|mem_0      |   in|   32|     ap_none|           mem_0|       pointer|
+|mem_1      |   in|   32|     ap_none|           mem_1|       pointer|
+|mem_2      |   in|   32|     ap_none|           mem_2|       pointer|
+|mem_3      |   in|   32|     ap_none|           mem_3|       pointer|
+|mem_4      |   in|   32|     ap_none|           mem_4|       pointer|
+|mem_5      |   in|   32|     ap_none|           mem_5|       pointer|
+|mem_6      |   in|   32|     ap_none|           mem_6|       pointer|
+|mem_7      |   in|   32|     ap_none|           mem_7|       pointer|
+|mem_8      |   in|   32|     ap_none|           mem_8|       pointer|
+|mem_9      |   in|   32|     ap_none|           mem_9|       pointer|
+|mem_10     |   in|   32|     ap_none|          mem_10|       pointer|
+|mem_11     |   in|   32|     ap_none|          mem_11|       pointer|
+|mem_12     |   in|   32|     ap_none|          mem_12|       pointer|
+|mem_13     |   in|   32|     ap_none|          mem_13|       pointer|
+|mem_14     |   in|   32|     ap_none|          mem_14|       pointer|
+|mem_15     |   in|   32|     ap_none|          mem_15|       pointer|
+|mem_16     |   in|   32|     ap_none|          mem_16|       pointer|
+|mem_17     |   in|   32|     ap_none|          mem_17|       pointer|
+|mem_18     |   in|   32|     ap_none|          mem_18|       pointer|
+|mem_19     |   in|   32|     ap_none|          mem_19|       pointer|
+|mem_20     |   in|   32|     ap_none|          mem_20|       pointer|
+|mem_21     |   in|   32|     ap_none|          mem_21|       pointer|
+|mem_22     |   in|   32|     ap_none|          mem_22|       pointer|
+|mem_23     |   in|   32|     ap_none|          mem_23|       pointer|
+|mem_24     |   in|   32|     ap_none|          mem_24|       pointer|
+|mem_25     |   in|   32|     ap_none|          mem_25|       pointer|
+|mem_26     |   in|   32|     ap_none|          mem_26|       pointer|
+|mem_27     |   in|   32|     ap_none|          mem_27|       pointer|
+|mem_28     |   in|   32|     ap_none|          mem_28|       pointer|
+|mem_29     |   in|   32|     ap_none|          mem_29|       pointer|
+|mem_30     |   in|   32|     ap_none|          mem_30|       pointer|
+|mem_31     |   in|   32|     ap_none|          mem_31|       pointer|
+|mem_32     |   in|   32|     ap_none|          mem_32|       pointer|
+|mem_33     |   in|   32|     ap_none|          mem_33|       pointer|
+|mem_34     |   in|   32|     ap_none|          mem_34|       pointer|
+|mem_35     |   in|   32|     ap_none|          mem_35|       pointer|
+|mem_36     |   in|   32|     ap_none|          mem_36|       pointer|
+|mem_37     |   in|   32|     ap_none|          mem_37|       pointer|
+|mem_38     |   in|   32|     ap_none|          mem_38|       pointer|
+|mem_39     |   in|   32|     ap_none|          mem_39|       pointer|
+|mem_40     |   in|   32|     ap_none|          mem_40|       pointer|
+|mem_41     |   in|   32|     ap_none|          mem_41|       pointer|
+|mem_42     |   in|   32|     ap_none|          mem_42|       pointer|
+|mem_43     |   in|   32|     ap_none|          mem_43|       pointer|
+|mem_44     |   in|   32|     ap_none|          mem_44|       pointer|
+|mem_45     |   in|   32|     ap_none|          mem_45|       pointer|
+|mem_46     |   in|   32|     ap_none|          mem_46|       pointer|
+|mem_47     |   in|   32|     ap_none|          mem_47|       pointer|
+|mem_48     |   in|   32|     ap_none|          mem_48|       pointer|
+|mem_49     |   in|   32|     ap_none|          mem_49|       pointer|
+|mem_50     |   in|   32|     ap_none|          mem_50|       pointer|
+|mem_51     |   in|   32|     ap_none|          mem_51|       pointer|
+|mem_52     |   in|   32|     ap_none|          mem_52|       pointer|
+|mem_53     |   in|   32|     ap_none|          mem_53|       pointer|
+|mem_54     |   in|   32|     ap_none|          mem_54|       pointer|
+|mem_55     |   in|   32|     ap_none|          mem_55|       pointer|
+|mem_56     |   in|   32|     ap_none|          mem_56|       pointer|
+|mem_57     |   in|   32|     ap_none|          mem_57|       pointer|
+|mem_58     |   in|   32|     ap_none|          mem_58|       pointer|
+|mem_59     |   in|   32|     ap_none|          mem_59|       pointer|
+|mem_60     |   in|   32|     ap_none|          mem_60|       pointer|
+|mem_61     |   in|   32|     ap_none|          mem_61|       pointer|
+|mem_62     |   in|   32|     ap_none|          mem_62|       pointer|
+|mem_63     |   in|   32|     ap_none|          mem_63|       pointer|
+|mem_64     |   in|   32|     ap_none|          mem_64|       pointer|
+|mem_65     |   in|   32|     ap_none|          mem_65|       pointer|
+|mem_66     |   in|   32|     ap_none|          mem_66|       pointer|
+|mem_67     |   in|   32|     ap_none|          mem_67|       pointer|
+|mem_68     |   in|   32|     ap_none|          mem_68|       pointer|
+|mem_69     |   in|   32|     ap_none|          mem_69|       pointer|
+|mem_70     |   in|   32|     ap_none|          mem_70|       pointer|
+|mem_71     |   in|   32|     ap_none|          mem_71|       pointer|
+|mem_72     |   in|   32|     ap_none|          mem_72|       pointer|
+|mem_73     |   in|   32|     ap_none|          mem_73|       pointer|
+|mem_74     |   in|   32|     ap_none|          mem_74|       pointer|
+|mem_75     |   in|   32|     ap_none|          mem_75|       pointer|
+|mem_76     |   in|   32|     ap_none|          mem_76|       pointer|
+|mem_77     |   in|   32|     ap_none|          mem_77|       pointer|
+|mem_78     |   in|   32|     ap_none|          mem_78|       pointer|
+|mem_79     |   in|   32|     ap_none|          mem_79|       pointer|
+|mem_80     |   in|   32|     ap_none|          mem_80|       pointer|
+|mem_81     |   in|   32|     ap_none|          mem_81|       pointer|
+|mem_82     |   in|   32|     ap_none|          mem_82|       pointer|
+|mem_83     |   in|   32|     ap_none|          mem_83|       pointer|
+|mem_84     |   in|   32|     ap_none|          mem_84|       pointer|
+|mem_85     |   in|   32|     ap_none|          mem_85|       pointer|
+|mem_86     |   in|   32|     ap_none|          mem_86|       pointer|
+|mem_87     |   in|   32|     ap_none|          mem_87|       pointer|
+|mem_88     |   in|   32|     ap_none|          mem_88|       pointer|
+|mem_89     |   in|   32|     ap_none|          mem_89|       pointer|
+|mem_90     |   in|   32|     ap_none|          mem_90|       pointer|
+|mem_91     |   in|   32|     ap_none|          mem_91|       pointer|
+|mem_92     |   in|   32|     ap_none|          mem_92|       pointer|
+|mem_93     |   in|   32|     ap_none|          mem_93|       pointer|
+|mem_94     |   in|   32|     ap_none|          mem_94|       pointer|
+|mem_95     |   in|   32|     ap_none|          mem_95|       pointer|
+|mem_96     |   in|   32|     ap_none|          mem_96|       pointer|
+|mem_97     |   in|   32|     ap_none|          mem_97|       pointer|
+|mem_98     |   in|   32|     ap_none|          mem_98|       pointer|
+|mem_99     |   in|   32|     ap_none|          mem_99|       pointer|
+|mem_100    |   in|   32|     ap_none|         mem_100|       pointer|
+|mem_101    |   in|   32|     ap_none|         mem_101|       pointer|
+|mem_102    |   in|   32|     ap_none|         mem_102|       pointer|
+|mem_103    |   in|   32|     ap_none|         mem_103|       pointer|
+|mem_104    |   in|   32|     ap_none|         mem_104|       pointer|
+|mem_105    |   in|   32|     ap_none|         mem_105|       pointer|
+|mem_106    |   in|   32|     ap_none|         mem_106|       pointer|
+|mem_107    |   in|   32|     ap_none|         mem_107|       pointer|
+|mem_108    |   in|   32|     ap_none|         mem_108|       pointer|
+|mem_109    |   in|   32|     ap_none|         mem_109|       pointer|
+|mem_110    |   in|   32|     ap_none|         mem_110|       pointer|
+|mem_111    |   in|   32|     ap_none|         mem_111|       pointer|
+|mem_112    |   in|   32|     ap_none|         mem_112|       pointer|
+|mem_113    |   in|   32|     ap_none|         mem_113|       pointer|
+|mem_114    |   in|   32|     ap_none|         mem_114|       pointer|
+|mem_115    |   in|   32|     ap_none|         mem_115|       pointer|
+|mem_116    |   in|   32|     ap_none|         mem_116|       pointer|
+|mem_117    |   in|   32|     ap_none|         mem_117|       pointer|
+|mem_118    |   in|   32|     ap_none|         mem_118|       pointer|
+|mem_119    |   in|   32|     ap_none|         mem_119|       pointer|
+|mem_120    |   in|   32|     ap_none|         mem_120|       pointer|
+|mem_121    |   in|   32|     ap_none|         mem_121|       pointer|
+|mem_122    |   in|   32|     ap_none|         mem_122|       pointer|
+|mem_123    |   in|   32|     ap_none|         mem_123|       pointer|
+|mem_124    |   in|   32|     ap_none|         mem_124|       pointer|
+|mem_125    |   in|   32|     ap_none|         mem_125|       pointer|
+|mem_126    |   in|   32|     ap_none|         mem_126|       pointer|
+|mem_127    |   in|   32|     ap_none|         mem_127|       pointer|
++-----------+-----+-----+------------+----------------+--------------+
+

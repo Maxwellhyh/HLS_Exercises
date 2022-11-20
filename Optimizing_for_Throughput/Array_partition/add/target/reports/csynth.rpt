@@ -1,0 +1,170 @@
+
+
+================================================================
+== Synthesis Summary Report of 'top'
+================================================================
++ General Information: 
+    * Date:           Mon Nov 21 03:40:39 2022
+    * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+    * Project:        1115add
+    * Solution:       solution6 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------+------+------+---------+--------+----------+---------+------+----------+------+----+---+-----------+-----+
+    | Modules| Issue|      | Latency | Latency| Iteration|         | Trip |          |      |    |   |           |     |
+    | & Loops| Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP| FF|    LUT    | URAM|
+    +--------+------+------+---------+--------+----------+---------+------+----------+------+----+---+-----------+-----+
+    |+ top   |     -|  4.75|        0|   0.000|         -|        1|     -|        no|     -|   -|  -|  390 (~0%)|    -|
+    +--------+------+------+---------+--------+----------+---------+------+----------+------+----+---+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* REGISTER
++-----------+---------+----------+
+| Interface | Mode    | Bitwidth |
++-----------+---------+----------+
+| a_0       | ap_none | 32       |
+| a_1       | ap_none | 32       |
+| a_2       | ap_none | 32       |
+| a_3       | ap_none | 32       |
+| a_4       | ap_none | 32       |
+| a_5       | ap_none | 32       |
+| a_6       | ap_none | 32       |
+| a_7       | ap_none | 32       |
+| a_8       | ap_none | 32       |
+| a_9       | ap_none | 32       |
+| b_0       | ap_none | 32       |
+| b_1       | ap_none | 32       |
+| b_2       | ap_none | 32       |
+| b_3       | ap_none | 32       |
+| b_4       | ap_none | 32       |
+| b_5       | ap_none | 32       |
+| b_6       | ap_none | 32       |
+| b_7       | ap_none | 32       |
+| b_8       | ap_none | 32       |
+| b_9       | ap_none | 32       |
+| dout_0    | ap_none | 32       |
+| dout_1    | ap_none | 32       |
+| dout_2    | ap_none | 32       |
+| dout_3    | ap_none | 32       |
+| dout_4    | ap_none | 32       |
+| dout_5    | ap_none | 32       |
+| dout_6    | ap_none | 32       |
+| dout_7    | ap_none | 32       |
+| dout_8    | ap_none | 32       |
+| dout_9    | ap_none | 32       |
++-----------+---------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| a        | in        | int*     |
+| b        | in        | int*     |
+| dout     | out       | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+---------------+---------+
+| Argument | HW Interface  | HW Type |
++----------+---------------+---------+
+| a        | a_0           | port    |
+| a        | a_1           | port    |
+| a        | a_2           | port    |
+| a        | a_3           | port    |
+| a        | a_4           | port    |
+| a        | a_5           | port    |
+| a        | a_6           | port    |
+| a        | a_7           | port    |
+| a        | a_8           | port    |
+| a        | a_9           | port    |
+| b        | b_0           | port    |
+| b        | b_1           | port    |
+| b        | b_2           | port    |
+| b        | b_3           | port    |
+| b        | b_4           | port    |
+| b        | b_5           | port    |
+| b        | b_6           | port    |
+| b        | b_7           | port    |
+| b        | b_8           | port    |
+| b        | b_9           | port    |
+| dout     | dout_0        | port    |
+| dout     | dout_0_ap_vld | port    |
+| dout     | dout_1        | port    |
+| dout     | dout_1_ap_vld | port    |
+| dout     | dout_2        | port    |
+| dout     | dout_2_ap_vld | port    |
+| dout     | dout_3        | port    |
+| dout     | dout_3_ap_vld | port    |
+| dout     | dout_4        | port    |
+| dout     | dout_4_ap_vld | port    |
+| dout     | dout_5        | port    |
+| dout     | dout_5_ap_vld | port    |
+| dout     | dout_6        | port    |
+| dout     | dout_6_ap_vld | port    |
+| dout     | dout_7        | port    |
+| dout     | dout_7_ap_vld | port    |
+| dout     | dout_8        | port    |
+| dout     | dout_8_ap_vld | port    |
+| dout     | dout_9        | port    |
+| dout     | dout_9_ap_vld | port    |
++----------+---------------+---------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++----------+-----+--------+------------+-----+--------+---------+
+| Name     | DSP | Pragma | Variable   | Op  | Impl   | Latency |
++----------+-----+--------+------------+-----+--------+---------+
+| + top    | 0   |        |            |     |        |         |
+|   dout_0 | -   |        | add_ln16   | add | fabric | 0       |
+|   dout_1 | -   |        | add_ln16_1 | add | fabric | 0       |
+|   dout_2 | -   |        | add_ln16_2 | add | fabric | 0       |
+|   dout_3 | -   |        | add_ln16_3 | add | fabric | 0       |
+|   dout_4 | -   |        | add_ln16_4 | add | fabric | 0       |
+|   dout_5 | -   |        | add_ln16_5 | add | fabric | 0       |
+|   dout_6 | -   |        | add_ln16_6 | add | fabric | 0       |
+|   dout_7 | -   |        | add_ln16_7 | add | fabric | 0       |
+|   dout_8 | -   |        | add_ln16_8 | add | fabric | 0       |
+|   dout_9 | -   |        | add_ln16_9 | add | fabric | 0       |
++----------+-----+--------+------------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+-----------------------------------+-------------------------------+
+| Type            | Options                           | Location                      |
++-----------------+-----------------------------------+-------------------------------+
+| array_partition | dim=1 type=complete variable=dout | ../add/top.cpp:6 in top, dout |
+| array_partition | dim=1 type=complete variable=b    | ../add/top.cpp:7 in top, b    |
+| array_partition | dim=1 type=complete variable=a    | ../add/top.cpp:8 in top, a    |
+| unroll          |                                   | ../add/top.cpp:13 in top      |
++-----------------+-----------------------------------+-------------------------------+
+
+
