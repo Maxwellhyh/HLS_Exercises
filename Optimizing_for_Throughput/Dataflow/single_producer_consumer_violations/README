@@ -1,0 +1,21 @@
+This is a common DATAFLOW issue, where the signal produced by the producer cannot be read by two consumers. This example shows both the problem and solution.
+
+If you run the design directly, it will report:
+
+ERROR: [HLS 200-779] Non-shared array 'tmp2' (dut_sol.cpp:53) failed dataflow checking: it can only have a single reader and a single writer.
+
+Delete the comments in line 66 and 69, then the design can follow the single-producer-consumer paradigm.
+
+ Included in this Package
+ ==============================
+ dut.cpp  
+ dut_sol.cpp  
+ test_dut.cpp  
+ run_hls.tcl
+ README
+
+ Running the Design (edit run_hls.tcl to set $hls_exec and enable specific run steps)
+ =========================================================
+ vitis_hls -f run_hls.tcl
+
+
