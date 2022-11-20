@@ -8,9 +8,7 @@
 #include <sys/time.h>
 
 
-//#include "sds_lib.h"
-#define sds_alloc malloc
-#define sds_free free
+
 
 typedef float DT;
 
