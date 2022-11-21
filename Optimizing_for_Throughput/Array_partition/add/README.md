@@ -6,3 +6,5 @@
 ├── run_hls.tcl   //tcl文件
 └── README.md     //说明文件
 ```
+
+Target: latency < 20ns

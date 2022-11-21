@@ -1,0 +1,157 @@
+
+
+================================================================
+== Vitis HLS Report for 'top'
+================================================================
+* Date:           Mon Nov 21 03:40:39 2022
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        1115add
+* Solution:       solution6 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  2.552 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    1|    1|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|    390|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|      -|    -|
+|Register         |        -|    -|       -|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|       0|    390|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|       0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------+----------+----+---+----+------------+------------+
+    | Variable Name| Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------+----------+----+---+----+------------+------------+
+    |dout_0        |         +|   0|  0|  39|          32|          32|
+    |dout_1        |         +|   0|  0|  39|          32|          32|
+    |dout_2        |         +|   0|  0|  39|          32|          32|
+    |dout_3        |         +|   0|  0|  39|          32|          32|
+    |dout_4        |         +|   0|  0|  39|          32|          32|
+    |dout_5        |         +|   0|  0|  39|          32|          32|
+    |dout_6        |         +|   0|  0|  39|          32|          32|
+    |dout_7        |         +|   0|  0|  39|          32|          32|
+    |dout_8        |         +|   0|  0|  39|          32|          32|
+    |dout_9        |         +|   0|  0|  39|          32|          32|
+    +--------------+----------+----+---+----+------------+------------+
+    |Total         |          |   0|  0| 390|         320|         320|
+    +--------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------+-----+-----+------------+--------------+--------------+
+|   RTL Ports   | Dir | Bits|  Protocol  | Source Object|    C Type    |
++---------------+-----+-----+------------+--------------+--------------+
+|ap_start       |   in|    1|  ap_ctrl_hs|           top|  return value|
+|ap_done        |  out|    1|  ap_ctrl_hs|           top|  return value|
+|ap_idle        |  out|    1|  ap_ctrl_hs|           top|  return value|
+|ap_ready       |  out|    1|  ap_ctrl_hs|           top|  return value|
+|a_0            |   in|   32|     ap_none|           a_0|       pointer|
+|a_1            |   in|   32|     ap_none|           a_1|       pointer|
+|a_2            |   in|   32|     ap_none|           a_2|       pointer|
+|a_3            |   in|   32|     ap_none|           a_3|       pointer|
+|a_4            |   in|   32|     ap_none|           a_4|       pointer|
+|a_5            |   in|   32|     ap_none|           a_5|       pointer|
+|a_6            |   in|   32|     ap_none|           a_6|       pointer|
+|a_7            |   in|   32|     ap_none|           a_7|       pointer|
+|a_8            |   in|   32|     ap_none|           a_8|       pointer|
+|a_9            |   in|   32|     ap_none|           a_9|       pointer|
+|b_0            |   in|   32|     ap_none|           b_0|       pointer|
+|b_1            |   in|   32|     ap_none|           b_1|       pointer|
+|b_2            |   in|   32|     ap_none|           b_2|       pointer|
+|b_3            |   in|   32|     ap_none|           b_3|       pointer|
+|b_4            |   in|   32|     ap_none|           b_4|       pointer|
+|b_5            |   in|   32|     ap_none|           b_5|       pointer|
+|b_6            |   in|   32|     ap_none|           b_6|       pointer|
+|b_7            |   in|   32|     ap_none|           b_7|       pointer|
+|b_8            |   in|   32|     ap_none|           b_8|       pointer|
+|b_9            |   in|   32|     ap_none|           b_9|       pointer|
+|dout_0         |  out|   32|      ap_vld|        dout_0|       pointer|
+|dout_0_ap_vld  |  out|    1|      ap_vld|        dout_0|       pointer|
+|dout_1         |  out|   32|      ap_vld|        dout_1|       pointer|
+|dout_1_ap_vld  |  out|    1|      ap_vld|        dout_1|       pointer|
+|dout_2         |  out|   32|      ap_vld|        dout_2|       pointer|
+|dout_2_ap_vld  |  out|    1|      ap_vld|        dout_2|       pointer|
+|dout_3         |  out|   32|      ap_vld|        dout_3|       pointer|
+|dout_3_ap_vld  |  out|    1|      ap_vld|        dout_3|       pointer|
+|dout_4         |  out|   32|      ap_vld|        dout_4|       pointer|
+|dout_4_ap_vld  |  out|    1|      ap_vld|        dout_4|       pointer|
+|dout_5         |  out|   32|      ap_vld|        dout_5|       pointer|
+|dout_5_ap_vld  |  out|    1|      ap_vld|        dout_5|       pointer|
+|dout_6         |  out|   32|      ap_vld|        dout_6|       pointer|
+|dout_6_ap_vld  |  out|    1|      ap_vld|        dout_6|       pointer|
+|dout_7         |  out|   32|      ap_vld|        dout_7|       pointer|
+|dout_7_ap_vld  |  out|    1|      ap_vld|        dout_7|       pointer|
+|dout_8         |  out|   32|      ap_vld|        dout_8|       pointer|
+|dout_8_ap_vld  |  out|    1|      ap_vld|        dout_8|       pointer|
+|dout_9         |  out|   32|      ap_vld|        dout_9|       pointer|
+|dout_9_ap_vld  |  out|    1|      ap_vld|        dout_9|       pointer|
++---------------+-----+-----+------------+--------------+--------------+
+
