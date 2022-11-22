@@ -9,6 +9,8 @@
 └── README.md                 //说明文件
 ```
 
+Target: LUT < 2280
+
 The pragma specifies that the variable coeffs uses a single port RAM implemented on a BRAM core from the library.
 
 #pragma HLS bind_storage variable=coeffs type=RAM_1P impl=bram

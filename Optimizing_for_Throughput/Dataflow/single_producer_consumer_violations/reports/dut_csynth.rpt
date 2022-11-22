@@ -1,0 +1,202 @@
+
+
+================================================================
+== Vitis HLS Report for 'dut'
+================================================================
+* Date:           Tue Nov 15 14:13:32 2022
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:47:01 MDT 2022)
+* Project:        producerconsumer
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu5p-flva2104-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  3.736 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |      392|      392|  3.920 us|  3.920 us|  131|  131|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +-----------------+--------------+---------+---------+----------+----------+-----+-----+---------+
+        |                 |              |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |     Instance    |    Module    |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +-----------------+--------------+---------+---------+----------+----------+-----+-----+---------+
+        |producer_sol_U0  |producer_sol  |      130|      130|  1.300 us|  1.300 us|  130|  130|       no|
+        |consumer1_U0     |consumer1     |      130|      130|  1.300 us|  1.300 us|  130|  130|       no|
+        |consumer2_U0     |consumer2     |      130|      130|  1.300 us|  1.300 us|  130|  130|       no|
+        |output_U0        |output_r      |      130|      130|  1.300 us|  1.300 us|  130|  130|       no|
+        +-----------------+--------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+--------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT  | URAM|
++---------------------+---------+------+---------+--------+-----+
+|DSP                  |        -|     -|        -|       -|    -|
+|Expression           |        -|     -|        0|      26|    -|
+|FIFO                 |        -|     -|        -|       -|    -|
+|Instance             |        -|     -|       76|     389|    -|
+|Memory               |        6|     -|        0|       0|    0|
+|Multiplexer          |        -|     -|        -|      36|    -|
+|Register             |        -|     -|        4|       -|    -|
++---------------------+---------+------+---------+--------+-----+
+|Total                |        6|     0|       80|     451|    0|
++---------------------+---------+------+---------+--------+-----+
+|Available SLR        |     1024|  1737|   600577|  300288|  235|
++---------------------+---------+------+---------+--------+-----+
+|Utilization SLR (%)  |       ~0|     0|       ~0|      ~0|    0|
++---------------------+---------+------+---------+--------+-----+
+|Available            |     2048|  3474|  1201154|  600577|  470|
++---------------------+---------+------+---------+--------+-----+
+|Utilization (%)      |       ~0|     0|       ~0|      ~0|    0|
++---------------------+---------+------+---------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------+--------------+---------+----+----+-----+-----+
+    |     Instance    |    Module    | BRAM_18K| DSP| FF | LUT | URAM|
+    +-----------------+--------------+---------+----+----+-----+-----+
+    |consumer1_U0     |consumer1     |        0|   0|  19|  107|    0|
+    |consumer2_U0     |consumer2     |        0|   0|  19|  107|    0|
+    |output_U0        |output_r      |        0|   0|  19|  107|    0|
+    |producer_sol_U0  |producer_sol  |        0|   0|  19|   68|    0|
+    +-----------------+--------------+---------+----+----+-----+-----+
+    |Total            |              |        0|   0|  76|  389|    0|
+    +-----------------+--------------+---------+----+----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +------------+--------------------+---------+---+----+-----+------+-----+------+-------------+
+    |   Memory   |       Module       | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +------------+--------------------+---------+---+----+-----+------+-----+------+-------------+
+    |tmp1_U      |tmp1_RAM_AUTO_1R1W  |        1|  0|   0|    0|   128|   32|     1|         4096|
+    |tmp2_U      |tmp1_RAM_AUTO_1R1W  |        1|  0|   0|    0|   128|   32|     1|         4096|
+    |tmp4_U      |tmp1_RAM_AUTO_1R1W  |        1|  0|   0|    0|   128|   32|     1|         4096|
+    |tmp5_U      |tmp1_RAM_AUTO_1R1W  |        1|  0|   0|    0|   128|   32|     1|         4096|
+    |tmp1copy_U  |tmp1_RAM_AUTO_1R1W  |        1|  0|   0|    0|   128|   32|     1|         4096|
+    |tmp2copy_U  |tmp1_RAM_AUTO_1R1W  |        1|  0|   0|    0|   128|   32|     1|         4096|
+    +------------+--------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total       |                    |        6|  0|   0|    0|   768|  192|     6|        24576|
+    +------------+--------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------------------+----------+----+---+----+------------+------------+
+    |          Variable Name         | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------------------+----------+----+---+----+------------+------------+
+    |ap_channel_done_tmp1            |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_tmp1copy        |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_tmp2            |       and|   0|  0|   2|           1|           1|
+    |ap_channel_done_tmp2copy        |       and|   0|  0|   2|           1|           1|
+    |ap_idle                         |       and|   0|  0|   2|           1|           1|
+    |consumer1_U0_ap_start           |       and|   0|  0|   2|           1|           1|
+    |consumer2_U0_ap_start           |       and|   0|  0|   2|           1|           1|
+    |output_U0_ap_start              |       and|   0|  0|   2|           1|           1|
+    |producer_sol_U0_ap_continue     |       and|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_tmp1      |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_tmp1copy  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_tmp2      |        or|   0|  0|   2|           1|           1|
+    |ap_sync_channel_write_tmp2copy  |        or|   0|  0|   2|           1|           1|
+    +--------------------------------+----------+----+---+----+------------+------------+
+    |Total                           |          |   0|  0|  26|          13|          13|
+    +--------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------------+----+-----------+-----+-----------+
+    |                Name                | LUT| Input Size| Bits| Total Bits|
+    +------------------------------------+----+-----------+-----+-----------+
+    |ap_sync_reg_channel_write_tmp1      |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_tmp1copy  |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_tmp2      |   9|          2|    1|          2|
+    |ap_sync_reg_channel_write_tmp2copy  |   9|          2|    1|          2|
+    +------------------------------------+----+-----------+-----+-----------+
+    |Total                               |  36|          8|    4|          8|
+    +------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------+---+----+-----+-----------+
+    |                Name                | FF| LUT| Bits| Const Bits|
+    +------------------------------------+---+----+-----+-----------+
+    |ap_sync_reg_channel_write_tmp1      |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_tmp1copy  |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_tmp2      |  1|   0|    1|          0|
+    |ap_sync_reg_channel_write_tmp2copy  |  1|   0|    1|          0|
+    +------------------------------------+---+----+-----+-----------+
+    |Total                               |  4|   0|    4|          0|
+    +------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------+-----+-----+------------+--------------+--------------+
+|   RTL Ports   | Dir | Bits|  Protocol  | Source Object|    C Type    |
++---------------+-----+-----+------------+--------------+--------------+
+|ap_clk         |   in|    1|  ap_ctrl_hs|           dut|  return value|
+|ap_rst         |   in|    1|  ap_ctrl_hs|           dut|  return value|
+|ap_start       |   in|    1|  ap_ctrl_hs|           dut|  return value|
+|ap_done        |  out|    1|  ap_ctrl_hs|           dut|  return value|
+|ap_ready       |  out|    1|  ap_ctrl_hs|           dut|  return value|
+|ap_idle        |  out|    1|  ap_ctrl_hs|           dut|  return value|
+|a_address0     |  out|    7|   ap_memory|             a|         array|
+|a_ce0          |  out|    1|   ap_memory|             a|         array|
+|a_d0           |  out|   32|   ap_memory|             a|         array|
+|a_q0           |   in|   32|   ap_memory|             a|         array|
+|a_we0          |  out|    1|   ap_memory|             a|         array|
+|a_address1     |  out|    7|   ap_memory|             a|         array|
+|a_ce1          |  out|    1|   ap_memory|             a|         array|
+|a_d1           |  out|   32|   ap_memory|             a|         array|
+|a_q1           |   in|   32|   ap_memory|             a|         array|
+|a_we1          |  out|    1|   ap_memory|             a|         array|
+|b_address0     |  out|    7|   ap_memory|             b|         array|
+|b_ce0          |  out|    1|   ap_memory|             b|         array|
+|b_d0           |  out|   32|   ap_memory|             b|         array|
+|b_q0           |   in|   32|   ap_memory|             b|         array|
+|b_we0          |  out|    1|   ap_memory|             b|         array|
+|b_address1     |  out|    7|   ap_memory|             b|         array|
+|b_ce1          |  out|    1|   ap_memory|             b|         array|
+|b_d1           |  out|   32|   ap_memory|             b|         array|
+|b_q1           |   in|   32|   ap_memory|             b|         array|
+|b_we1          |  out|    1|   ap_memory|             b|         array|
+|tmp3_address0  |  out|    7|   ap_memory|          tmp3|         array|
+|tmp3_ce0       |  out|    1|   ap_memory|          tmp3|         array|
+|tmp3_d0        |  out|   32|   ap_memory|          tmp3|         array|
+|tmp3_q0        |   in|   32|   ap_memory|          tmp3|         array|
+|tmp3_we0       |  out|    1|   ap_memory|          tmp3|         array|
+|tmp3_address1  |  out|    7|   ap_memory|          tmp3|         array|
+|tmp3_ce1       |  out|    1|   ap_memory|          tmp3|         array|
+|tmp3_d1        |  out|   32|   ap_memory|          tmp3|         array|
+|tmp3_q1        |   in|   32|   ap_memory|          tmp3|         array|
+|tmp3_we1       |  out|    1|   ap_memory|          tmp3|         array|
++---------------+-----+-----+------------+--------------+--------------+
+

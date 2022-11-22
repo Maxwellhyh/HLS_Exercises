@@ -18,4 +18,4 @@ Delete the comments in line 66 and 69, then the design can follow the single-pro
  =========================================================
  vitis_hls -f run_hls.tcl
 
-
+Target: Modify the code and run the design successfully.
