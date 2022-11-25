@@ -1,6 +1,6 @@
 set Project     sobel
 set Solution    solution1
-set Device      "xcu50-fsvh2104-2-e"
+set Device      "xc7z020-clg400-1"
 set Flow        "vivado"
 set Clock       10
 
