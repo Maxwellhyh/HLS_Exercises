@@ -1,8 +1,11 @@
+
+#include <iostream>
+#include <stdlib.h>
 #include "mmult_accel.h"
 #define block 8
 void mmult(const int* A, const int* B, int* C);
 
-void mmult_hw(int* in1, int* in2, int* out, int dim)
+void mmult_hw(int* in1, int* in2, int* out)
 {
 
     int outbuf[block*block];
@@ -46,8 +49,8 @@ void mmult(const int* A, const int* B, int* C)
             systolic3: for(int j = 0; j < block; j++) {
                 int last = (k==0) ? 0 : C[i*block+j];
 
-                int a_val = (i < block && k < block)? A[i*block+k] : 0;
-                int b_val = (k < block && j < block)? B[k*block+j] : 0;
+                int a_val = (i < block && k < block)? A[i*DATA_SIZE+k] : 0;
+                int b_val = (k < block && j < block)? B[k*DATA_SIZE+j] : 0;
                 int result = last + a_val*b_val;
 
                 C[i*block+j] = result;
@@ -55,4 +58,5 @@ void mmult(const int* A, const int* B, int* C)
         }
     }
 }
+
 
