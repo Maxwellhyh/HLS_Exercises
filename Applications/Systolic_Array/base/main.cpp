@@ -4,7 +4,7 @@
 #include "mmult_accel.h"
 
 #ifndef NUM_TIMES
-#define NUM_TIMES 2  
+#define NUM_TIMES 1
 #endif
 
 void mmult_sw( int *in1,   // Input matrix 1
@@ -30,39 +30,36 @@ int main(int argc, char** argv)
 
     int in1[DATA_SIZE * DATA_SIZE];
     int in2[DATA_SIZE * DATA_SIZE];
-    int hw_result[DATA_SIZE * DATA_SIZE];;
-    int sw_result[DATA_SIZE * DATA_SIZE];;
+    int hw_result[DATA_SIZE * DATA_SIZE];
+    int sw_result[DATA_SIZE * DATA_SIZE];
 
     bool match = true;
 
-    for (int i = 0; i < NUM_TIMES; i++)
-    { 
         //Create test data
-        for (int i = 0; i < dim * dim; i++) {
-            in1[i] = rand() % dim;
-            in2[i] = rand() % dim;
-            sw_result[i] = 0;
-            hw_result[i] = 0;
-        }
+    for (int i = 0; i < dim * dim; i++) {
+        in1[i] = rand() % dim;
+        in2[i] = rand() % dim;
+        sw_result[i] = 0;
+        hw_result[i] = 0;
+    }
      
 
         //Launch the software solution
-        mmult_sw( in1, in2, sw_result, dim);
+    mmult_sw( in1, in2, sw_result, dim);
 
         //Launch the Hardware solution
-        mmult_hw( in1, in2, hw_result);
+    mmult_hw( in1, in2, hw_result);
 
 
         //Compare the results of hardware to the software 
-        for(int i=0; i< dim * dim; i++)
+    for(int i=0; i< dim * dim; i++)
+    {
+        if( sw_result[i] != hw_result[i] )
         {
-            if( sw_result[i] != hw_result[i] )
-            {
-                std::cout << "Results Mismatch on " << "Row:" << i/dim << "Col:" << i - (i/dim)*dim << std::endl;
-                std::cout << "CPU output:" << sw_result[i] <<"\t Hardware output:" << hw_result[i] << std::endl;
-                match = false;
-                break;
-            }
+            std::cout << "Results Mismatch on " << "Row:" << i/dim << "Col:" << i - (i/dim)*dim << std::endl;
+            std::cout << "CPU output:" << sw_result[i] <<"\t Hardware output:" << hw_result[i] << std::endl;
+            match = false;
+            break;
         }
     }
 
