@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "mmult_accel.h"
 #define block 8
-void mmult(const int* A, const int* B, int* C);
+void mmult(int* A, int* B, int* C);
 
 void mmult_hw(int* in1, int* in2, int* out)
 {
@@ -40,7 +40,7 @@ void mmult_hw(int* in1, int* in2, int* out)
 
 
 
-void mmult(const int* A, const int* B, int* C)
+void mmult(int* A, int* B, int* C)
 {
 
     systolic1: for(int k = 0; k < block; k++) {
